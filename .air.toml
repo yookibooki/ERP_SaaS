@@ -1,0 +1,15 @@
+root = "."
+tmp_dir = "tmp"
+
+[build]
+  cmd = "go build -o ./tmp/inventory-api ./cmd/inventory-api"
+  bin = "./tmp/inventory-api"
+  include_dir = ["cmd", "internal"]
+  exclude_dir = ["tmp", "vendor", "test"]
+  log = "air-build.log"
+
+[log]
+  time = true
+
+[misc]
+  clean_on_exit = true
