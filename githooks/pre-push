@@ -1,0 +1,19 @@
+#!/bin/sh
+set -e
+
+echo "Running full test suite..."
+go test ./...
+if [ $? -ne 0 ]; then
+  echo "Full tests failed. Please fix issues before pushing."
+  exit 1
+fi
+
+echo "Running go vet..."
+go vet ./...
+if [ $? -ne 0 ]; then
+  echo "Go vet failed. Please fix issues before pushing."
+  exit 1
+fi
+
+echo "Pre-push checks passed."
+exit 0

@@ -1,0 +1,26 @@
+#!/bin/sh
+set -e
+
+echo "Running gofumpt..."
+gofumpt -l -w .
+if git status --porcelain | grep .; then
+  echo "Code was reformatted by gofumpt. Please stage changes and try committing again."
+  exit 1
+fi
+
+echo "Running goimports..."
+goimports -l -w .
+if git status --porcelain | grep .; then
+  echo "Code was reformatted by goimports. Please stage changes and try committing again."
+  exit 1
+fi
+
+echo "Running basic tests..."
+go test -short ./...
+if [ $? -ne 0 ]; then
+  echo "Basic tests failed. Please fix issues before committing."
+  exit 1
+fi
+
+echo "Pre-commit checks passed."
+exit 0
