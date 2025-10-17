@@ -4,8 +4,6 @@
 This is a SaaS ERP application built using Go.
 
 ## Directory Structure
-This project follows a standard Go project layout for better organization and maintainability. Below is the directory structure:
-
 - **`/cmd`** - Main applications, with each subdirectory matching the executable name (e.g., `/cmd/myapp`). Contains minimal code, with `main` functions importing from `/internal` or `/pkg`.
 - **`/internal`** - Private application and library code, enforced by the Go compiler to prevent external imports. Can include `/internal/pkg` for shared code and `/internal/app` for app-specific code.
 - **`/pkg`** - Reusable library code safe for external use (e.g., `/pkg/mypubliclib`).
