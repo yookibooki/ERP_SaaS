@@ -1,0 +1,42 @@
+# Binaries and executables
+*.so
+*.dylib
+
+# Go test and coverage files
+*.test
+*.out
+coverage.out
+
+# Editor and IDE files
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS-generated files
+.DS_Store
+
+# Build and packaging output
+/bin/
+
+# Test data and logs
+/test/data/
+/test/testdata/
+/test/*.log
+
+# Configuration and sensitive files
+/configs/*.local
+/configs/*.secret
+*.env
+
+# Temporary files
+/tmp/
+
+# Generated documentation
+/docs/gen/
+
+# Website build output
+/website/build/
+
+# Project-specific files
+repomix-output.md
